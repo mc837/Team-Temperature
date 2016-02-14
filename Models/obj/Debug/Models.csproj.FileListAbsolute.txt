@@ -1,0 +1,4 @@
+C:\Dev\Team Temperature\Models\bin\Debug\Models.dll
+C:\Dev\Team Temperature\Models\bin\Debug\Models.pdb
+C:\Dev\Team Temperature\Models\obj\Debug\Models.dll
+C:\Dev\Team Temperature\Models\obj\Debug\Models.pdb
