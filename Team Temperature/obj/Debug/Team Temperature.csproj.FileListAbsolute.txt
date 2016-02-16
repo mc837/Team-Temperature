@@ -88,6 +88,7 @@ c:\users\matt clarkson\documents\visual studio 2015\Projects\Team Temperature\Te
 c:\users\matt clarkson\documents\visual studio 2015\Projects\Team Temperature\Team Temperature\obj\Debug\Team Temperature.csprojResolveAssemblyReference.cache
 c:\users\matt clarkson\documents\visual studio 2015\Projects\Team Temperature\Team Temperature\obj\Debug\Team Temperature.dll
 c:\users\matt clarkson\documents\visual studio 2015\Projects\Team Temperature\Team Temperature\obj\Debug\Team Temperature.pdb
+C:\Dev\Team Temperature\Team Temperature\obj\Debug\Team Temperature.csprojResolveAssemblyReference.cache
 C:\Dev\Team Temperature\Team Temperature\bin\ApplicationInsights.config
 C:\Dev\Team Temperature\Team Temperature\bin\roslyn\csc.exe
 C:\Dev\Team Temperature\Team Temperature\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -149,8 +150,6 @@ C:\Dev\Team Temperature\Team Temperature\bin\System.Web.WebPages.Deployment.dll
 C:\Dev\Team Temperature\Team Temperature\bin\System.Web.WebPages.dll
 C:\Dev\Team Temperature\Team Temperature\bin\System.Web.WebPages.Razor.dll
 C:\Dev\Team Temperature\Team Temperature\bin\WebGrease.dll
-C:\Dev\Team Temperature\Team Temperature\bin\MongoDB.Driver.Legacy.dll
-C:\Dev\Team Temperature\Team Temperature\bin\CuttingEdge.Conditions.dll
 C:\Dev\Team Temperature\Team Temperature\bin\Models.pdb
 C:\Dev\Team Temperature\Team Temperature\bin\Repository.pdb
 C:\Dev\Team Temperature\Team Temperature\bin\Autofac.xml
@@ -190,8 +189,5 @@ C:\Dev\Team Temperature\Team Temperature\bin\Microsoft.Owin.Security.Google.xml
 C:\Dev\Team Temperature\Team Temperature\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Dev\Team Temperature\Team Temperature\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Dev\Team Temperature\Team Temperature\bin\System.Web.Http.Owin.xml
-C:\Dev\Team Temperature\Team Temperature\bin\MongoDB.Driver.Legacy.xml
-C:\Dev\Team Temperature\Team Temperature\bin\CuttingEdge.Conditions.xml
-C:\Dev\Team Temperature\Team Temperature\obj\Debug\Team Temperature.csprojResolveAssemblyReference.cache
 C:\Dev\Team Temperature\Team Temperature\obj\Debug\Team Temperature.dll
 C:\Dev\Team Temperature\Team Temperature\obj\Debug\Team Temperature.pdb

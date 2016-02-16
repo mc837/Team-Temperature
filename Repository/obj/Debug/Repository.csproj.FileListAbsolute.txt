@@ -1,3 +1,4 @@
+C:\Dev\Team Temperature\Repository\obj\Debug\Repository.csprojResolveAssemblyReference.cache
 C:\Dev\Team Temperature\Repository\bin\Debug\Repository.dll
 C:\Dev\Team Temperature\Repository\bin\Debug\Repository.pdb
 C:\Dev\Team Temperature\Repository\bin\Debug\CuttingEdge.Conditions.dll
@@ -11,6 +12,5 @@ C:\Dev\Team Temperature\Repository\bin\Debug\CuttingEdge.Conditions.xml
 C:\Dev\Team Temperature\Repository\bin\Debug\MongoDB.Bson.xml
 C:\Dev\Team Temperature\Repository\bin\Debug\MongoDB.Driver.xml
 C:\Dev\Team Temperature\Repository\bin\Debug\MongoDB.Driver.Legacy.xml
-C:\Dev\Team Temperature\Repository\obj\Debug\Repository.csprojResolveAssemblyReference.cache
 C:\Dev\Team Temperature\Repository\obj\Debug\Repository.dll
 C:\Dev\Team Temperature\Repository\obj\Debug\Repository.pdb

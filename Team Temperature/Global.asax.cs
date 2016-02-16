@@ -36,22 +36,14 @@ namespace Team_Temperature
             var containerBuilder = new ContainerBuilder();
             var assembly = Assembly.GetExecutingAssembly();
             var config = GlobalConfiguration.Configuration;
-
             containerBuilder.RegisterApiControllers(assembly);
-
-            var mongoHost = "mongodb://localhost";
-            var mongoDatabase = new MongoClient(mongoHost).GetDatabase("teamTemperature");
-            containerBuilder.RegisterType<MongoProvider>().As<IMongoProvider>().WithParameter("database", mongoDatabase);
-
+            containerBuilder.RegisterType<MongoProvider>().As<IMongoProvider>();
             containerBuilder.RegisterType<UserRepository>().As<IUserRepository>();
-
             containerBuilder.RegisterType<AddUserCommand>().As<IAddUserCommand>();
 
             var container = containerBuilder.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
             return container;
-
-
         }
     }
 }
