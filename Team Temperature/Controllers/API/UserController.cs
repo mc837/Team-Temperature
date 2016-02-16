@@ -3,7 +3,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Models;
-using Repository;
 using Team_Temperature.Infrastructure.Commands;
 
 namespace Team_Temperature.Controllers.API

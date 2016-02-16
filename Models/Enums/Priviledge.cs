@@ -2,7 +2,7 @@
 {
     public enum Priviledge
     {
-        SuperUser,
-        Normal
+        Normal,
+        SuperUser
     }
 }
