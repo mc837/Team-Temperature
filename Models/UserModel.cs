@@ -15,6 +15,7 @@ namespace Models
         public string Surname { get; set; }
         public string Email { get; set; }
         public Priviledge Priviledge { get; set; }
+        public bool Deleted { get; set; }
     }
 }
 

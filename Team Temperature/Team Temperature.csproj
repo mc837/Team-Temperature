@@ -262,8 +262,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Commands\AddUserCommand.cs" />
+    <Compile Include="Infrastructure\Commands\DeleteUserCommand.cs" />
     <Compile Include="Infrastructure\Commands\EditUserCommand.cs" />
     <Compile Include="Infrastructure\Commands\IAddUserCommand.cs" />
+    <Compile Include="Infrastructure\Commands\IDeleteUserCommand.cs" />
     <Compile Include="Infrastructure\Commands\IEditUserCommand.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />

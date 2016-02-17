@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using System;
+using MongoDB.Driver;
 
 namespace Repository
 {
@@ -44,6 +45,25 @@ namespace Repository
             try
             {
                 database.ReplaceOneAsync(filter, model).GetAwaiter().GetResult();
+            }
+            catch (MongoWriteException)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool Delete<T>(T model)
+        {
+            var database = _database.GetCollection<T>(_collectionName);
+            var t = model.GetType();
+            var prop = t.GetProperty("Id").GetValue(model);
+            var filter = Builders<T>.Filter.Eq("_id", prop);
+            var setDeleteFlag = Builders<T>.Update.Set("Deleted", true);
+
+            try
+            {
+                database.UpdateOneAsync(filter, setDeleteFlag).GetAwaiter().GetResult();
             }
             catch (MongoWriteException)
             {

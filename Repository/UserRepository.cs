@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using System;
+using Models;
 
 namespace Repository
 {
@@ -19,6 +20,11 @@ namespace Repository
         public bool UpdateUser(UserModel user)
         {
             return _repository.Update(user);
+        }
+
+        public bool DeleteUser(UserModel user)
+        {
+            return _repository.Delete(user);
         }
     }
 }

@@ -12,11 +12,13 @@ namespace Team_Temperature.Controllers.API
     {
         private readonly IAddUserCommand _addUserCommand;
         private readonly IEditUserCommand _editUserCommand;
+        private readonly IDeleteUserCommand _deleteUserCommand;
 
-        public UserController(IAddUserCommand addUserCommand, IEditUserCommand editUserCommand)
+        public UserController(IAddUserCommand addUserCommand, IEditUserCommand editUserCommand, IDeleteUserCommand deleteUserCommand)
         {
             _addUserCommand = addUserCommand;
             _editUserCommand = editUserCommand;
+            _deleteUserCommand = deleteUserCommand;
         }
 
         //post add
@@ -43,24 +45,40 @@ namespace Team_Temperature.Controllers.API
             return new HttpResponseMessage(HttpStatusCode.NotImplemented);
         }
 
-        [HttpGet]
-        [Route("all")]
-        public HttpResponseMessage All(UserModel user)
+        //post delete
+        [HttpPost]
+        [Route("delete")]
+        public HttpResponseMessage Delete(UserModel user)
         {
-            Console.WriteLine(user);
-            if (user != null)
+            if (_deleteUserCommand.Execute(user))
             {
-                return new HttpResponseMessage(HttpStatusCode.Accepted);
-
+                return new HttpResponseMessage(HttpStatusCode.OK);
             }
-            return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            return new HttpResponseMessage(HttpStatusCode.NotImplemented);
         }
 
-        [HttpGet]
-        [Route("test")]
-        public string Test()
-        {
-            return Guid.NewGuid().ToString();
-        }
+
+
+
+//
+//        [HttpGet]
+//        [Route("all")]
+//        public HttpResponseMessage All(UserModel user)
+//        {
+//            Console.WriteLine(user);
+//            if (user != null)
+//            {
+//                return new HttpResponseMessage(HttpStatusCode.Accepted);
+//
+//            }
+//            return new HttpResponseMessage(HttpStatusCode.BadRequest);
+//        }
+//
+//        [HttpGet]
+//        [Route("test")]
+//        public string Test()
+//        {
+//            return Guid.NewGuid().ToString();
+//        }
     }
 }

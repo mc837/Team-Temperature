@@ -36,11 +36,19 @@ namespace Team_Temperature
             var containerBuilder = new ContainerBuilder();
             var assembly = Assembly.GetExecutingAssembly();
             var config = GlobalConfiguration.Configuration;
+
             containerBuilder.RegisterApiControllers(assembly);
+
+            //Mongo Repo's
             containerBuilder.RegisterType<MongoProvider>().As<IMongoProvider>();
             containerBuilder.RegisterType<UserRepository>().As<IUserRepository>();
+
+            //commands
             containerBuilder.RegisterType<AddUserCommand>().As<IAddUserCommand>();
             containerBuilder.RegisterType<EditUserCommand>().As<IEditUserCommand>();
+            containerBuilder.RegisterType<DeleteUserCommand>().As<IDeleteUserCommand>();
+
+            //Queries
 
             var container = containerBuilder.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);

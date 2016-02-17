@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Controllers\API\UserControllerTests.cs" />
     <Compile Include="Infrastructure\AddUserCommandTests.cs" />
+    <Compile Include="Infrastructure\DeleteUserCommandTests.cs" />
     <Compile Include="Infrastructure\EditUserCommandTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using System;
+using Models;
 using NUnit.Framework;
 using Rhino.Mocks;
 
@@ -41,6 +42,19 @@ namespace Repository.Tests
             var result = _repo.UpdateUser(user);
 
             _mockMongoProvider.AssertWasCalled(p => p.Update(Arg<UserModel>.Is.Equal(user)));
+            Assert.That(result, Is.True);
+        }
+
+        [Test]
+        public void should_CallIntoProvider_When_DeleteUserIsCalled()
+        {
+            var user = new UserModel { FirstName = "FirstName" };
+
+            _mockMongoProvider.Stub(p => p.Delete(user)).Return(true);
+
+            var result = _repo.DeleteUser(user);
+
+            _mockMongoProvider.AssertWasCalled(p => p.Delete(Arg<UserModel>.Is.Equal(user)));
             Assert.That(result, Is.True);
         }
     }

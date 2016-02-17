@@ -6,5 +6,6 @@ namespace Repository
     {
         bool AddUser(UserModel user);
         bool UpdateUser(UserModel user);
+        bool DeleteUser(UserModel user);
     }
 }
