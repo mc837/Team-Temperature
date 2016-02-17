@@ -15,5 +15,10 @@ namespace Repository
         {
             return _repository.Insert(user);
         }
+
+        public bool UpdateUser(UserModel user)
+        {
+            return _repository.Update(user);
+        }
     }
 }

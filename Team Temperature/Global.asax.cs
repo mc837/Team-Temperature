@@ -40,6 +40,7 @@ namespace Team_Temperature
             containerBuilder.RegisterType<MongoProvider>().As<IMongoProvider>();
             containerBuilder.RegisterType<UserRepository>().As<IUserRepository>();
             containerBuilder.RegisterType<AddUserCommand>().As<IAddUserCommand>();
+            containerBuilder.RegisterType<EditUserCommand>().As<IEditUserCommand>();
 
             var container = containerBuilder.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);

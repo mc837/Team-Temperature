@@ -1,5 +1,4 @@
-﻿using System;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 
 namespace Repository
 {
@@ -32,7 +31,24 @@ namespace Repository
                 // mwx.WriteError.Category == ServerErrorCategory.DuplicateKey)
                 return false;
             }
+            return true;
+        }
 
+        public bool Update<T>(T model)
+        {
+            var database = _database.GetCollection<T>(_collectionName);
+            var t = model.GetType();
+            var prop = t.GetProperty("Id").GetValue(model);
+            
+            var filter = Builders<T>.Filter.Eq("_id", prop);
+            try
+            {
+                database.ReplaceOneAsync(filter, model).GetAwaiter().GetResult();
+            }
+            catch (MongoWriteException)
+            {
+                return false;
+            }
             return true;
         }
     }

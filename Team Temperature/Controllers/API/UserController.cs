@@ -11,10 +11,12 @@ namespace Team_Temperature.Controllers.API
     public class UserController : ApiController
     {
         private readonly IAddUserCommand _addUserCommand;
+        private readonly IEditUserCommand _editUserCommand;
 
-        public UserController(IAddUserCommand addUserCommand)
+        public UserController(IAddUserCommand addUserCommand, IEditUserCommand editUserCommand)
         {
             _addUserCommand = addUserCommand;
+            _editUserCommand = editUserCommand;
         }
 
         //post add
@@ -25,6 +27,18 @@ namespace Team_Temperature.Controllers.API
             if (_addUserCommand.Execute(user))
             {
                 return new HttpResponseMessage(HttpStatusCode.Created);
+            }
+            return new HttpResponseMessage(HttpStatusCode.NotImplemented);
+        }
+
+        //post edit
+        [HttpPost]
+        [Route("edit")]
+        public HttpResponseMessage Edit(UserModel user)
+        {
+            if (_editUserCommand.Execute(user))
+            {
+                return new HttpResponseMessage(HttpStatusCode.OK);
             }
             return new HttpResponseMessage(HttpStatusCode.NotImplemented);
         }

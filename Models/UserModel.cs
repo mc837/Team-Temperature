@@ -7,10 +7,10 @@ namespace Models
     {
         public UserModel()
         {
-            Id = Guid.NewGuid();
+            Id = 1;
         }
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }

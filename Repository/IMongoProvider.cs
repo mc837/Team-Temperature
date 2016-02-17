@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using Models;
+using MongoDB.Driver;
 
 namespace Repository
 {
@@ -6,5 +7,6 @@ namespace Repository
     {
         IMongoProvider ForCollection(string collectionName);
         bool Insert<T>(T model);
+        bool Update<T>(T user);
     }
 }
