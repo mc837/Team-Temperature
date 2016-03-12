@@ -4,7 +4,7 @@ using Repository;
 using Rhino.Mocks;
 using Team_Temperature.Infrastructure.Commands;
 
-namespace API.Tests.Infrastructure
+namespace API.Tests.Infrastructure.Commands
 {
     public class DeleteUserCommandTests
     {

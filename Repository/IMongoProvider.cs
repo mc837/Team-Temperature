@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using Models;
 using MongoDB.Driver;
 
@@ -10,5 +12,6 @@ namespace Repository
         bool Insert<T>(T model);
         bool Update<T>(T user);
         bool Delete<T>(T user);
+        List<T> Find<T>();
     }
 }

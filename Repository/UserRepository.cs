@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Models;
 
 namespace Repository
@@ -25,6 +26,11 @@ namespace Repository
         public bool DeleteUser(UserModel user)
         {
             return _repository.Delete(user);
+        }
+
+        public List<UserModel> GetAllUsers()
+        {
+            return _repository.Find<UserModel>();
         }
     }
 }

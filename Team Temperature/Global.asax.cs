@@ -9,6 +9,7 @@ using Autofac.Integration.WebApi;
 using MongoDB.Driver;
 using Repository;
 using Team_Temperature.Infrastructure.Commands;
+using Team_Temperature.Infrastructure.Queries;
 
 namespace Team_Temperature
 {
@@ -49,6 +50,7 @@ namespace Team_Temperature
             containerBuilder.RegisterType<DeleteUserCommand>().As<IDeleteUserCommand>();
 
             //Queries
+            containerBuilder.RegisterType<GetAllUsersQuery>().As<IGetAllUsersQuery>();
 
             var container = containerBuilder.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);

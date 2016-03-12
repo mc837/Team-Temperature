@@ -14,13 +14,15 @@ namespace API.Tests.Controllers.API
         private UserController _controller;
         private IAddUserCommand _mockedAddUserCommand;
         private IEditUserCommand _mockedEditUserCommand ;
+        private IDeleteUserCommand _mockedDeleteUserCommand;
 
         [SetUp]
         public void Setup()
         {
             _mockedAddUserCommand = MockRepository.GenerateMock<IAddUserCommand>();
             _mockedEditUserCommand = MockRepository.GenerateMock<IEditUserCommand>();
-            _controller = new UserController(_mockedAddUserCommand, _mockedEditUserCommand);
+            _mockedDeleteUserCommand = MockRepository.GenerateMock<IDeleteUserCommand>();
+            _controller = new UserController(_mockedAddUserCommand, _mockedEditUserCommand, _mockedDeleteUserCommand, );
         }
 
         [Test]

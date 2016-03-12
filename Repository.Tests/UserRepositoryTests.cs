@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Models;
+using Models.Enums;
 using NUnit.Framework;
 using Rhino.Mocks;
 
@@ -28,7 +30,7 @@ namespace Repository.Tests
 
             var result = _repo.AddUser(user);
 
-            _mockMongoProvider.AssertWasCalled(p=>p.Insert(Arg<UserModel>.Is.Equal(user)));
+            _mockMongoProvider.AssertWasCalled(p => p.Insert(Arg<UserModel>.Is.Equal(user)));
             Assert.That(result, Is.True);
         }
 
@@ -56,6 +58,22 @@ namespace Repository.Tests
 
             _mockMongoProvider.AssertWasCalled(p => p.Delete(Arg<UserModel>.Is.Equal(user)));
             Assert.That(result, Is.True);
+        }
+
+        [Test]
+        public void should_CallIntoProvider_When_GetAllUsersIsCalled()
+        {
+            var users = new List<UserModel>{
+                    new UserModel {Id =Guid.NewGuid(), FirstName = "FirstName1", Surname = "Surname1", Email = "email1@email.com", Priviledge = Priviledge.Normal},
+                    new UserModel {Id =Guid.NewGuid(), FirstName = "FirstName2", Surname = "Surname2", Email = "email2@email.com", Priviledge = Priviledge.Normal}
+            };
+
+            _mockMongoProvider.Stub(p => p.Find<UserModel>()).Return(users);
+
+            var result = _repo.GetAllUsers();
+
+            _mockMongoProvider.AssertWasCalled(p => p.Find<UserModel>());
+            Assert.That(result, Is.EqualTo(users));
         }
     }
 }

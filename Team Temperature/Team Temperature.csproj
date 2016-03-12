@@ -275,6 +275,8 @@
     <Compile Include="Infrastructure\Commands\IAddUserCommand.cs" />
     <Compile Include="Infrastructure\Commands\IDeleteUserCommand.cs" />
     <Compile Include="Infrastructure\Commands\IEditUserCommand.cs" />
+    <Compile Include="Infrastructure\Queries\GetAllUsersQuery.cs" />
+    <Compile Include="Infrastructure\Queries\IGetAllUsersQuery.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />

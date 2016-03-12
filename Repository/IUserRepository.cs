@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using System.Collections.Generic;
+using Models;
 
 namespace Repository
 {
@@ -7,5 +8,6 @@ namespace Repository
         bool AddUser(UserModel user);
         bool UpdateUser(UserModel user);
         bool DeleteUser(UserModel user);
+        List<UserModel> GetAllUsers();
     }
 }

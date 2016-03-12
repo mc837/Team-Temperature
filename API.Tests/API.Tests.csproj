@@ -61,9 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\API\UserControllerTests.cs" />
-    <Compile Include="Infrastructure\AddUserCommandTests.cs" />
-    <Compile Include="Infrastructure\DeleteUserCommandTests.cs" />
-    <Compile Include="Infrastructure\EditUserCommandTests.cs" />
+    <Compile Include="Infrastructure\Commands\AddUserCommandTests.cs" />
+    <Compile Include="Infrastructure\Commands\DeleteUserCommandTests.cs" />
+    <Compile Include="Infrastructure\Commands\EditUserCommandTests.cs" />
+    <Compile Include="Infrastructure\Queries\GetAllUsersQueryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +85,7 @@
       <Name>Team Temperature</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
