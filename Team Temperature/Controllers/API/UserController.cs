@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -67,6 +68,19 @@ namespace Team_Temperature.Controllers.API
         public UsersResponseModel AllUsers()
         {
             var users = _getAllUsersQuery.Execute();
+
+            return new UsersResponseModel
+            {
+                UserCount = users.Count,
+                Users = users
+            };
+        }
+
+        //get users
+        [System.Web.Http.Route("allvalidusers")]
+        public UsersResponseModel AllValidUsers()
+        {
+            var users = _getAllUsersQuery.Execute().Where(d => d.Deleted == false).ToList();
 
             return new UsersResponseModel
             {
